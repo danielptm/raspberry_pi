@@ -15,3 +15,4 @@ To upload an arduino script to arduino
 
 To see output from script running (baudrate has to match in file)
 ```arduino-cli monitor -p /dev/ttyACM0 -c baudrate=9600```
+
