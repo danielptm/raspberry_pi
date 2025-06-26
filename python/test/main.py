@@ -1,17 +1,16 @@
 import serial
 import time
 
-
-def print_hi(name):
-    ser = serial.Serial('/dev/ttyACM0', 115200, timeout = 1.0)
-    time.sleep(3)
-    ser.reset_input_buffer()
-    print("Serial ok")
+ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1.0)
+time.sleep(3)
+ser.reset_input_buffer()
+print("Serial ok")
+try:
+    while True:
+        time.sleep(0.01)
+        if ser.in_waiting > 0:
+            line = ser.readline().decode("utf-8")
+            print(line)
+except KeyboardInterrupt:
+    print("Close serial connection")
     ser.close()
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
