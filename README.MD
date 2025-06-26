@@ -7,12 +7,11 @@ Install arduino CLI.
 
 
 To compile arduino script
-arduino-cli compile --fqbn arduino:avr:uno /path/to/folder/with/files/of/.ino
+```arduino-cli compile --fqbn arduino:avr:uno /path/to/folder/with/files/of/.ino```
 
 
 To upload an arduino script to arduino
-arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /path/to/folder/with/files/of/.ino
+```arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /path/to/folder/with/files/of/.ino```
 
 To see output from script running (baudrate has to match in file)
-arduino-cli monitor -p /dev/ttyACM0 -c baudrate=9600
-
+```arduino-cli monitor -p /dev/ttyACM0 -c baudrate=9600```
