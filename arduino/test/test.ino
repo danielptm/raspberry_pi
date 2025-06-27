@@ -7,6 +7,9 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("Hello from Tomauto");
-  delay(1000);
+  if (Serial.available() > 0) {
+    String message = Serial.readStringUntil('\n');
+    String sendBack = "Lets do this!";
+    Serial.println(sendBack);
+  }
 }
